@@ -1,33 +1,66 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react'
-import {useIntl} from 'react-intl'
-import {KTSVG} from '../../../helpers'
-import {AsideMenuItemWithSub} from './AsideMenuItemWithSub'
-import {AsideMenuItem} from './AsideMenuItem'
+import React from "react";
+import { useIntl } from "react-intl";
+import { KTSVG } from "../../../helpers";
+import { AsideMenuItemWithSub } from "./AsideMenuItemWithSub";
+import { AsideMenuItem } from "./AsideMenuItem";
 
 export function AsideMenuMain() {
-  const intl = useIntl()
+  const intl = useIntl();
 
   return (
     <>
       <AsideMenuItem
-        to='/dashboard'
-        icon='/media/icons/duotone/Design/PenAndRuller.svg'
-        title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
-        fontIcon='bi-app-indicator'
+        to="/dashboard"
+        icon="/media/icons/duotone/Design/PenAndRuller.svg"
+        title={intl.formatMessage({ id: "MENU.DASHBOARD" })}
+        fontIcon="bi-app-indicator"
       />
-      <AsideMenuItem
+      {/* <AsideMenuItem
         to='/builder'
         icon='/media/icons/duotone/Interface/Settings-02.svg'
         title='Layout Builder'
         fontIcon='bi-layers'
-      />
-      <div className='menu-item'>
-        <div className='menu-content pt-8 pb-2'>
-          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
+      /> */}
+      <div className="menu-item">
+        <div className="menu-content pt-8 pb-2">
+          <span className="menu-section text-muted text-uppercase fs-8 ls-1">
+            Management
+          </span>
         </div>
       </div>
+
       <AsideMenuItemWithSub
+        to="/crafted/pages"
+        title="Teachers"
+        fontIcon="bi-archive"
+        icon="/media/icons/duotone/Code/Compiling.svg"
+      >
+        <AsideMenuItem
+          to="/teacher/list"
+          title="Teacher List"
+          hasBullet={true}
+        />
+
+        <AsideMenuItemWithSub
+          to="/crafted/pages/wizards"
+          title="Wizards"
+          hasBullet={true}
+        >
+          <AsideMenuItem
+            to="/crafted/pages/wizards/horizontal"
+            title="Horizontal"
+            hasBullet={true}
+          />
+          <AsideMenuItem
+            to="/crafted/pages/wizards/vertical"
+            title="Vertical"
+            hasBullet={true}
+          />
+        </AsideMenuItemWithSub>
+      </AsideMenuItemWithSub>
+
+      {/* <AsideMenuItemWithSub
         to='/crafted/pages'
         title='Pages'
         fontIcon='bi-archive'
@@ -53,8 +86,9 @@ export function AsideMenuMain() {
           />
           <AsideMenuItem to='/crafted/pages/wizards/vertical' title='Vertical' hasBullet={true} />
         </AsideMenuItemWithSub>
-      </AsideMenuItemWithSub>
-      <AsideMenuItemWithSub
+      </AsideMenuItemWithSub> */}
+
+      {/* <AsideMenuItemWithSub
         to='/crafted/accounts'
         title='Accounts'
         icon='/media/icons/duotone/General/User.svg'
@@ -62,8 +96,9 @@ export function AsideMenuMain() {
       >
         <AsideMenuItem to='/crafted/account/overview' title='Overview' hasBullet={true} />
         <AsideMenuItem to='/crafted/account/settings' title='Settings' hasBullet={true} />
-      </AsideMenuItemWithSub>
-      <AsideMenuItemWithSub
+      </AsideMenuItemWithSub> */}
+
+      {/* <AsideMenuItemWithSub
         to='/error'
         title='Errors'
         fontIcon='bi-sticky'
@@ -71,8 +106,9 @@ export function AsideMenuMain() {
       >
         <AsideMenuItem to='/error/404' title='Error 404' hasBullet={true} />
         <AsideMenuItem to='/error/500' title='Error 500' hasBullet={true} />
-      </AsideMenuItemWithSub>
-      <AsideMenuItemWithSub
+      </AsideMenuItemWithSub> */}
+
+      {/* <AsideMenuItemWithSub
         to='/crafted/widgets'
         title='Widgets'
         icon='/media/icons/duotone/Layout/Layout-4-blocks.svg'
@@ -84,13 +120,17 @@ export function AsideMenuMain() {
         <AsideMenuItem to='/crafted/widgets/mixed' title='Mixed' hasBullet={true} />
         <AsideMenuItem to='/crafted/widgets/tables' title='Tables' hasBullet={true} />
         <AsideMenuItem to='/crafted/widgets/feeds' title='Feeds' hasBullet={true} />
-      </AsideMenuItemWithSub>
-      <div className='menu-item'>
-        <div className='menu-content pt-8 pb-2'>
-          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Apps</span>
+      </AsideMenuItemWithSub> */}
+
+      <div className="menu-item">
+        <div className="menu-content pt-8 pb-2">
+          <span className="menu-section text-muted text-uppercase fs-8 ls-1">
+            Settings
+          </span>
         </div>
       </div>
-      <AsideMenuItemWithSub
+
+      {/* <AsideMenuItemWithSub
         to='/apps/chat'
         title='Chat'
         fontIcon='bi-chat-left'
@@ -99,13 +139,15 @@ export function AsideMenuMain() {
         <AsideMenuItem to='/apps/chat/private-chat' title='Private Chat' hasBullet={true} />
         <AsideMenuItem to='/apps/chat/group-chat' title='Group Chart' hasBullet={true} />
         <AsideMenuItem to='/apps/chat/drawer-chat' title='Drawer Chart' hasBullet={true} />
-      </AsideMenuItemWithSub>
-      <div className='menu-item'>
+      </AsideMenuItemWithSub> */}
+
+      {/* <div className='menu-item'>
         <div className='menu-content'>
           <div className='separator mx-1 my-4'></div>
         </div>
-      </div>
-      <div className='menu-item'>
+      </div> */}
+
+      {/* <div className='menu-item'>
         <a
           target='_blank'
           className='menu-link'
@@ -116,7 +158,7 @@ export function AsideMenuMain() {
           </span>
           <span className='menu-title'>Changelog {process.env.REACT_APP_VERSION}</span>
         </a>
-      </div>
+      </div> */}
     </>
-  )
+  );
 }
